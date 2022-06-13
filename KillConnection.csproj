@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{493B812A-B39F-4EA9-901E-1B001ABE6AF4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KillConnection</RootNamespace>
+    <AssemblyName>KillConnection</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibNet">
+      <HintPath>C:\Program Files\Locktime Software\NetLimiter 4\CoreLibNet.dll</HintPath>
+    </Reference>
+    <Reference Include="NetLimiter">
+      <HintPath>C:\Program Files\Locktime Software\NetLimiter 4\NetLimiter.dll</HintPath>
+    </Reference>
+    <Reference Include="NetLimiter.Runtime">
+      <HintPath>C:\Program Files\Locktime Software\NetLimiter 4\NetLimiter.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="NLInterop">
+      <HintPath>C:\Program Files\Locktime Software\NetLimiter 4\NLInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentsExtensions.cs" />
+    <Compile Include="Imports\Delegates\WindowProc.cs" />
+    <Compile Include="Imports\Structures\CopyDataStruct.cs" />
+    <Compile Include="Imports\User32.cs" />
+    <Compile Include="Messaging\MessageHandler.cs" />
+    <Compile Include="Messaging\MessageHandlerAttribute.cs" />
+    <Compile Include="Messaging\WindowMessageEventArgs.cs" />
+    <Compile Include="Messaging\WindowMessageHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

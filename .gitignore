@@ -1,0 +1,5 @@
+.vs
+obj
+/Build
+*.DotSettings
+*.user
